@@ -46,6 +46,10 @@ var strings = [
   {
     input: '(that++)++',
     out: 'that'
+  },
+  {
+    input: 'gRegor`++',
+    out: 'gRegor`'
   }
 ]
 
