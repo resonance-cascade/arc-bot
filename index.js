@@ -35,7 +35,7 @@ bot.addListener('pm', function(from, text, message) {
 function karmaGetter (string) {
   return string.match(/\w+(?=\+{2})/)
 }
-x
+
 function karmaSaver (recipient, cb) {
   cb(null, 'over 5000')
 }
