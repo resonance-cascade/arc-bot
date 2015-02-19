@@ -27,7 +27,7 @@ bot.addListener('message#', function(from, to, text, message) {
     console.log(from, to, text)
   }
   var karma = karmaGetter(text)
-  if (karma) {
+  if (karma.length) {
     karmaSaver(karma[0], function(err, totalKarma) {
       if (err) {
         return console.log(err)
