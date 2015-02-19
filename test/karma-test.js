@@ -36,7 +36,7 @@ var strings = [
     expected: 'hujfsdfgbvdwe....'
   },
   {
-    input: 'Ant_',
+    input: 'Ant_++',
     expected: 'Ant_'
   }
 ]
