@@ -4,6 +4,10 @@ var karmaGetter = require('../lib/karma').karmaGetter
 
 var strings = [
   {
+    input: 'Im just a silly chat message with no karma!',
+    out: null
+  },
+  {
     input: 'bloopy++',
     out: 'bloopy'
   },
@@ -50,7 +54,7 @@ test('make sure karmaGetter gets karma right', testStrings(strings))
 function testStrings (strings) {
   return function StringTest (t) {
     t.plan(strings.length)
-    strings.forEach(function(el, index, array) {
+    strings.forEach(function(el) {
       var res = karmaGetter(el.input)
       t.equal(res[0], el.out, el.input + ' => ' + res[0] + ' = ' + el.out)
     })
