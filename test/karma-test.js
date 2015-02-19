@@ -5,39 +5,43 @@ var karmaGetter = require('../lib/karma').karmaGetter
 var strings = [
   {
     input: 'bloopy++',
-    expected: 'bloopy'
+    out: 'bloopy'
   },
   {
     input: 'smoopy boopy++',
-    expected: 'boopy'
+    out: 'boopy'
   },
   {
     input: 'lots++ of++ karma++',
-    expected: 'lots'
+    out: 'lots'
   },
   {
     input: 'arc-bot++',
-    expected: 'arc-bot'
+    out: 'arc-bot'
   },
   {
     input: '(arc-bot)++',
-    expected: '(arc-bot)'
+    out: '(arc-bot)'
   },
   {
     input: 'woo!++',
-    expected: 'woo!'
+    out: 'woo!'
   },
   {
     input: '#!++',
-    expected: '#!'
+    out: '#!'
   },
   {
     input: 'hujfsdfgbvdwe....++',
-    expected: 'hujfsdfgbvdwe....'
+    out: 'hujfsdfgbvdwe....'
   },
   {
     input: 'Ant_++',
-    expected: 'Ant_'
+    out: 'Ant_'
+  },
+  {
+    input: '(that++)++',
+    out: 'that'
   }
 ]
 
@@ -48,7 +52,7 @@ function testStrings (strings) {
     t.plan(strings.length)
     strings.forEach(function(el, index, array) {
       var res = karmaGetter(el.input)
-      t.equal(res[0], el.expected, el.input + ' => ' + res[0] + ' = ' + el.expected)
+      t.equal(res[0], el.out, el.input + ' => ' + res[0] + ' = ' + el.out)
     })
   }
 }
