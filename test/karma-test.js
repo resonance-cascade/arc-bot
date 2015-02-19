@@ -12,23 +12,27 @@ var strings = [
     expected: 'boopy'
   },
   {
+    input: 'lots++ of++ karma++',
+    expected: 'lots'
+  },
+  {
     input: 'arc-bot++',
     expected: 'arc-bot'
   },
   {
     input: '(arc-bot)++',
     expected: '(arc-bot)'
-  },
+  }
 ]
 
 test('make sure karmaGetter gets karma right', testStrings(strings))
 
 function testStrings (strings) {
-  return function(t) {
+  return function StringTest (t) {
     t.plan(strings.length)
     strings.forEach(function(el, index, array) {
       var res = karmaGetter(el.input)
-      t.equal(res[0], el.expected, el.input + ' => ' + el.expected + ' = ' + res[0])
+      t.equal(res[0], el.expected, el.input + ' => ' + res[0] + ' = ' + el.expected)
     })
   }
 }
