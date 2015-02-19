@@ -25,7 +25,7 @@ var strings = [
   },
   {
     input: '(arc-bot)++',
-    out: '(arc-bot)'
+    out: null
   },
   {
     input: 'woo!++',
