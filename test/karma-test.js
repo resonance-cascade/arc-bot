@@ -22,6 +22,22 @@ var strings = [
   {
     input: '(arc-bot)++',
     expected: '(arc-bot)'
+  },
+  {
+    input: 'woo!++',
+    expected: 'woo!'
+  },
+  {
+    input: '#!++',
+    expected: '#!'
+  },
+  {
+    input: 'hujfsdfgbvdwe....++',
+    expected: 'hujfsdfgbvdwe....'
+  },
+  {
+    input: 'Ant_',
+    expected: 'Ant_'
   }
 ]
 
