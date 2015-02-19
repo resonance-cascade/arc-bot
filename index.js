@@ -26,7 +26,7 @@ bot.addListener('message#', function(from, to, text, message) {
   if (karma) {
     karmaSaver(karma[0], function(err, totalKarma) {
       if (err) {
-        console.log(err)
+        return console.log(err)
       }
       bot.say(to, [karma[0], 'has', totalKarma, 'karma'].join(' '))
     })
@@ -44,14 +44,13 @@ function karmaGetter (string) {
 function karmaSaver (recipient, cb) {
   db.get(recipient, function(err, value) {
     if (err) {
-      console.log('we failed')
       if (err.type === 'NotFoundError') {
         // Initialize the name
-        db.put(recipient, {
+        return db.put(recipient, {
           karma: 1
         }, function(err) {
             console.log('but we prevailed')
-            return err ? cb(err) : cb(null, 1)
+            err ? cb(err) : cb(null, 1)
           })
       }
       return cb(err)
