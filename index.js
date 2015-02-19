@@ -1,7 +1,9 @@
 var irc = require('irc')
 var levelup = require('level')
 
-var db = levelup('./karmadb')
+var db = levelup('./karmadb', {
+  encoding: 'json'
+})
 
 var config = {
   channels: ['#arc'],
@@ -45,16 +47,20 @@ function karmaSaver (recipient, cb) {
       console.log('we failed')
       if (err.type === 'NotFoundError') {
         // Initialize the name
-        db.put(recipient, 1, function(err) {
-          console.log('but we prevailed')
-          return err ? cb(err) : cb(null, 1)
-        })
+        db.put(recipient, {
+          karma: 1
+        }, function(err) {
+            console.log('but we prevailed')
+            return err ? cb(err) : cb(null, 1)
+          })
       }
       return cb(err)
     }
-    var karma = value + 1
-    db.put(recipient, karma, function(err) {
-      return err ? cb(err) : cb(null, karma)
-    })
+    var newKarma = value.karma + 1
+    db.put(recipient, {
+      karma: newKarma
+    }, function(err) {
+        return err ? cb(err) : cb(null, newKarma)
+      })
   })
 }
