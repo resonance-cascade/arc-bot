@@ -50,9 +50,10 @@ function karmaSaver (recipient, cb) {
       }
       return cb(err)
     }
-    var karma = value++
-    db.put(recipient, karma, function(err) {
-      return err ? cb(err) : cb(null, karma)
+    var karma = value
+    var newValue = karma++
+    db.put(recipient, newValue, function(err) {
+      return err ? cb(err) : cb(null, newValue)
     })
   })
 }
