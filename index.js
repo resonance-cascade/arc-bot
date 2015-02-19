@@ -44,18 +44,14 @@ function karmaGetter (string) {
 function karmaSaver (recipient, cb) {
   db.get(recipient, function(err, value) {
     if (err) {
-      console.log('we failed')
       if (err.type === 'NotFoundError') {
-        console.log('but we can fix it')
         // Initialize the name
         return db.put(recipient, {
           karma: 1
         }, function(err) {
-            console.log('and we did')
             return err ? cb(err) : cb(null, 1)
           })
       }
-      console.log('and we dont know why')
       return cb(err)
     }
     var newKarma = value.karma + 1
