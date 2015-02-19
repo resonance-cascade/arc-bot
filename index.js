@@ -1,6 +1,8 @@
 var irc = require('irc')
 var levelup = require('level')
 
+var karmaGetter = require('./lib/karma').karmaGetter
+
 var db = levelup('./karmadb', {
   encoding: 'json'
 })
@@ -38,10 +40,6 @@ bot.addListener('message#', function(from, to, text, message) {
 bot.addListener('pm', function(from, text, message) {
   console.log('PM: ', from, text)
 })
-
-function karmaGetter (string) {
-  return string.match(/\w+(?=\+{2})/)
-}
 
 function karmaSaver (recipient, cb) {
   db.get(recipient, function(err, value) {

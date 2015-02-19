@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "istanbul cover tape test/*.js | tap-spec"
+    "test": "istanbul cover tape test/*.js | tap-spec",
+    "submitCover": "cat coverage/lcov.info | codeclimate",
+    "travis": "npm test && npm run submitCover"
   },
   "repository": {
     "type": "git",
@@ -24,7 +26,7 @@
   "homepage": "https://github.com/bcomnes/arc-bot",
   "devDependencies": {
     "codeclimate-test-reporter": "0.0.4",
-    "istanbul": "^0.3.5",
+    "istanbul": "^0.3.6",
     "standard": "^2.6.3",
     "tap-spec": "^2.2.1",
     "tape": "^3.5.0"
