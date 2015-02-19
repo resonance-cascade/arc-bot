@@ -1,5 +1,7 @@
 # arc-bot
 
+[![david-dm](https://david-dm.org/bcomnes/arc-bot.svg)](https://david-dm.org/bcomnes/arc-bot)
+
 To start:
 
 ```sh
