@@ -51,8 +51,9 @@ function karmaSaver (recipient, cb) {
         }, function(err) {
             return err ? cb(err) : cb(null, 1)
           })
+      } else {
+        return cb(err)
       }
-      return cb(err)
     }
     var newKarma = value.karma + 1
     db.put(recipient, {
