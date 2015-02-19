@@ -3,7 +3,8 @@ node_js:
   - "0.12"
 sudo: false
 cache:
-  - npm
+  directories:
+    - node_modules
 
 script:
   # Run the tests/coverage
