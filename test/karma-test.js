@@ -5,7 +5,7 @@ var karmaGetter = require('../lib/karma').karmaGetter
 var strings = [
   {
     input: 'Im just a silly chat message with no karma!',
-    out: null
+    out: null,
   },
   {
     input: 'bloopy++',
@@ -64,3 +64,4 @@ function testStrings (strings) {
     })
   }
 }
+

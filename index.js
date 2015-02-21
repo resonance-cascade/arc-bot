@@ -15,7 +15,7 @@ var config = {
 
 var bot = new irc.Client(config.server, config.botName, {
   channels: config.channels,
-  debug: false
+  debug: true
 })
 
 bot.addListener('join', function(channel, who) {
@@ -25,6 +25,7 @@ bot.addListener('join', function(channel, who) {
 bot.addListener('message#', function(from, to, text, message) {
   if (bot.debug) {
     console.log(from, to, text)
+    console.log(message)
   }
   var karma = karmaGetter(text)
   if (karma.length > 0) {
