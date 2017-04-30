@@ -1,5 +1,7 @@
 # arc-bot
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/bcomnes/arc-bot.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/bcomnes/arc-bot.svg)](https://travis-ci.org/bcomnes/arc-bot)
 [![david-dm](https://david-dm.org/bcomnes/arc-bot.svg)](https://david-dm.org/bcomnes/arc-bot)
 [![Test Coverage](https://codeclimate.com/github/bcomnes/arc-bot/badges/coverage.svg)](https://codeclimate.com/github/bcomnes/arc-bot)
